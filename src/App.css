@@ -1,33 +1,70 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+
+body{
+  font-family: 'Amiri', serif;
+  background: #ffffff;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+header{
+  border-bottom: 1px solid #e2e2e2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-logo{
+  font-size: 30px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.title{
+  font-size: 30px;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-heading{
+  margin-top: 20px;
+  width: 200px;
+  border: 2px solid #009ffc;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.footer{
+  margin-top: 100px;
+}
+
+.input-text{
+  width: 300px;
+  height: 40px;
+  padding-inline-start: 20px;
+  border: 1px solid #009ffc;
+  border-radius: 10px;
+}
+
+.title{
+  font-size: 17px;
+  font-weight: 700;
+  color: black;
+}
+
+.title:hover{
+  text-decoration: none;
+  color: #009ffc;
+}
+
+.title-detail{
+  font-weight: 700;
+}
+
+.company{
+  font-size: 15px;
+  font-weight: 500;
+}
+.type{
+  color: #009ffc;
+  font-weight: 700;
+}
+
+.anticon svg {
+    margin-top: 5px;
+    margin-right: 20px;
 }
