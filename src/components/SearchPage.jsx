@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import data from "../data/positions.json";
 import moment from "moment";
-import { find, filter } from "lodash";
+import { filter } from "lodash";
 import { Form, Input, Button, Checkbox } from "antd";
 
 const SearchPage = (props) => {
-  const history = useHistory();
   const [dataJobs, setDataJobs] = useState([]);
   const [display, setDisplay] = useState(false);
 
@@ -15,8 +14,13 @@ const SearchPage = (props) => {
   }, []);
 
   const onFinish = (values) => {
-    const resultData = filter(dataJobs, { title: values.jobTitle });
-    setDataJobs(resultData);
+    const resultdata = dataJobs.filter((res) => {
+      return (
+        res.title.indexOf(values.jobTitle) > -1 ||
+        res.location.indexOf(values.jobLocation) > -1
+      );
+    });
+    setDataJobs(resultdata);
     setDisplay(true);
   };
 

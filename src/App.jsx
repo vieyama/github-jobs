@@ -10,6 +10,7 @@ import Footer from "./layouts/Footer";
 import Home from "./components/Home";
 import SearchPage from "./components/SearchPage";
 import detailJob from "./components/detailJob";
+import notFound from "./components/NotFound";
 import Login, { fakeAuth } from "./components/Login";
 import "./App.css";
 const App = (props) => {
@@ -35,8 +36,9 @@ const App = (props) => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />
-        <Route path="/search" component={SearchPage} />
-        <Route path="/job/:id" component={detailJob} />
+        <ProtectedRoute path="/search" component={SearchPage} />
+        <ProtectedRoute path="/job/:id" component={detailJob} />
+        <Route path="" component={notFound} />
       </Switch>
       <Footer />
     </Router>
