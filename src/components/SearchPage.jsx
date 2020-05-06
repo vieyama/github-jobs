@@ -16,11 +16,12 @@ const SearchPage = (props) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [dataJobs]);
 
   const onFinish = (values) => {
     setDisplay(true);
     const resultData = filter(dataJobs, { title: values.jobTitle });
+    setDataJobs(resultData);
     console.log(resultData);
   };
 
@@ -81,7 +82,7 @@ const SearchPage = (props) => {
               style={{ display: display ? "" : "none" }}
             >
               <div className="col-md-12">
-                <h2>Showing 3 Jobs</h2>
+                <h2>Showing {dataJobs.length} Jobs</h2>
               </div>
             </div>
 

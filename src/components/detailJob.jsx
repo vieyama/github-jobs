@@ -47,6 +47,24 @@ const SearchPage = (props) => {
                       src={dataSingle.company_logo}
                       alt=""
                     />
+
+                    <div className="how">
+                      <div className="card">
+                        <div className="card-header">How to Apply</div>
+                        <div className="card-body">
+                          Apply directly at
+                          <a href={parse(dataSingle.company_url)}>
+                            {" "}
+                            {dataSingle.company_url}
+                          </a>{" "}
+                          or{" "}
+                          <a href={parse(dataSingle.how_to_apply)}>
+                            {" "}
+                            Click Here
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
