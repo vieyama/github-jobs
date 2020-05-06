@@ -10,19 +10,14 @@ const SearchPage = (props) => {
   const [dataJobs, setDataJobs] = useState([]);
   const [display, setDisplay] = useState(false);
 
-  const getData = () => {
-    setDataJobs(data);
-  };
-
   useEffect(() => {
-    getData();
-  }, [dataJobs]);
+    setDataJobs(data);
+  }, []);
 
   const onFinish = (values) => {
-    setDisplay(true);
     const resultData = filter(dataJobs, { title: values.jobTitle });
     setDataJobs(resultData);
-    console.log(resultData);
+    setDisplay(true);
   };
 
   const fullTimeOnly = (e) => {
@@ -32,6 +27,11 @@ const SearchPage = (props) => {
     } else {
       setDataJobs(data);
     }
+  };
+
+  const onClear = () => {
+    setDataJobs(data);
+    setDisplay(false);
   };
 
   return (
@@ -55,7 +55,9 @@ const SearchPage = (props) => {
               </Form.Item>
               <Form.Item
                 name="jobLocation"
-                rules={[{ required: true, message: "Please fill this field!" }]}
+                rules={[
+                  { required: false, message: "Please fill this field!" },
+                ]}
                 label="Location"
               >
                 <Input style={{ width: "250px" }} />
@@ -70,7 +72,7 @@ const SearchPage = (props) => {
               </Form.Item>
               <Button
                 type="primary"
-                htmlType="submit"
+                onClick={onClear}
                 style={{ display: display ? "" : "none" }}
               >
                 Clear
